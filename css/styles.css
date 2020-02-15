@@ -133,7 +133,30 @@ body {
   }
 
   #menu {
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    transform: none;
+    padding: 0 15% 0 15%;
+    margin: 0 0 0 0;
+    width: 100%;
+
+    color: #AC5C83;
+  }
+
+  .menuItem {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  #menuToggle {
     display: block;
+    width: 100%;
+    height: 0px;
+  }
+
+  #menuToggle span {
+    display: none;
   }
 }
 
