@@ -11,6 +11,8 @@ body {
   font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
+body * {  border: 1px solid red;}
+
 #menuToggle {
   display: block;
   position: relative;
@@ -133,26 +135,33 @@ body {
   }
 
   #menu {
-    display: flex;
-    flex-direction: row;
+    display: inline;
     background: transparent;
     transform: none;
-    padding: 0 15% 0 15%;
-    margin: 0 0 0 0;
-    width: 100%;
-
-    color: #AC5C83;
+    padding: 0;
+    margin: 0;
+    width: auto;
   }
 
   .menuItem {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    display: block;
+  }
+
+  #menu li {
+    display: block;
   }
 
   #menuToggle {
-    display: block;
-    width: 100%;
-    height: 0px;
+    display: flex;
+    height: auto;
+    position: static;
+    top: 0;
+    left: 0;
+
+    justify-content: center;
   }
 
   #menuToggle span {
