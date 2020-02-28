@@ -128,17 +128,27 @@ body {
 }
 
 #name {
-  font-family: 'Roboto Mono', Arial, monospace;
+  font-family: space_monoregular, "Roboto Mono", monospace;
   font-weight: normal;
   font-size: 22vw;
   width: 80%;
-  margin: 0 auto 0 auto;
+  margin: 5% auto 0 auto;
   color: #F696C5;
+}
+
+@font-face {
+  font-family: 'space_monoregular';
+  src: url('spacemono-regular-webfont.woff2') format('woff2'),
+  url('spacemono-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 p {
   margin: 0;
 }
+
+
 /* TABLET STYLES */
 
 @media screen and (min-width: 600px) {
