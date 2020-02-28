@@ -129,7 +129,7 @@ body {
 
 #name {
   font-family: 'Roboto Mono', Arial, monospace;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 22vw;
   width: 80%;
   margin: 0 auto 0 auto;
