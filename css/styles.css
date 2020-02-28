@@ -187,7 +187,8 @@ p {
   #menu li {
     color: #F696C5;
     font-weight: bold;
-    font-size: x-large;
+    font-size: 3vw;
+    min-font-size: x-large;
   }
 
   #menuToggle {
@@ -203,7 +204,7 @@ p {
   #mePicture {
     height: 45%;
     width: 45%;
-    margin: 20% 0 0 5%;
+    margin: 15% 0 0 5%;
   }
 
   #name {
@@ -237,9 +238,8 @@ p {
 
 /* DESKTOP STYLES */
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
 
-  /* applies to screens wider than 999px */
   body {
     background: white;
   }
