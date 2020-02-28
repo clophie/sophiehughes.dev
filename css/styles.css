@@ -14,7 +14,7 @@ body {
 /*body * {  border: 1px solid red;}*/
 
 #menuToggle {
-  display: block;
+  display: inline-block;
   position: relative;
   top: 50px;
   left: 50px;
@@ -117,13 +117,35 @@ body {
   transform: none;
 }
 
+#mePicture {
+  width: 80%;
+  height: 80%;
+  margin: 15% auto 0 auto;
+  border-radius: 50%;
+  display: block;
+  border-style: solid;
+  border-color: #F696C5;
+}
+
+#name {
+  font-family: 'Roboto Mono', Arial, monospace;
+  font-weight: bold;
+  font-size: 22vw;
+  width: 80%;
+  margin: 0 auto 0 auto;
+  color: #F696C5;
+}
+
+p {
+  margin: 0;
+}
 /* TABLET STYLES */
 
 @media screen and (min-width: 600px) {
 
   /* applies to screens wider than 499px */
   body {
-    background: #cfc;
+    background: #FFD6EA;
   }
 
   /* Hide the hamburger menu */
@@ -168,12 +190,25 @@ body {
 
     justify-content: center;
   }
+
+  #mePicture {
+    height: 45%;
+    width: 45%;
+    margin: 20% 0 0 5%;
+  }
+
 }
 
 @media screen and (min-width: 700px) {
   #menu {
     padding: 5% 10% 0 10%;
     width: 80%;
+  }
+
+  #mePicture {
+    height: 40%;
+    width: 40%;
+    margin: 15% 0 0 10%;
   }
 }
 
@@ -189,5 +224,11 @@ body {
   #menu {
     padding: 5% 18% 0 18%;
     width: 64%;
+  }
+
+  #mePicture {
+    height: 30%;
+    width: 30%;
+    margin: 10% 0 0 18%;;
   }
 }
