@@ -11,7 +11,7 @@ body {
   font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
-body * {  border: 1px solid red;}
+/*body * {  border: 1px solid red;}*/
 
 #menuToggle {
   display: block;
@@ -126,27 +126,39 @@ body * {  border: 1px solid red;}
     background: #cfc;
   }
 
+  /* Hide the hamburger menu */
   #menuToggle input {
     display: none;
   }
 
+  #menuToggle span {
+    display: none;
+  }
+
+  /* Change hamburger nav to nav bar */
   #menu {
     display: flex;
     background: transparent;
     transform: none;
-    padding: 3% 0 0 0;
-    margin: 0;
-    width: 100%;
+    padding: 5% 18% 0 18%;
+    margin: 0 0 0 0;
+    width: 64%;
 
     white-space: nowrap;
   }
 
   .menuItem {
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 100%;
+    margin-left: 0; /*makw these 7 if testign is bad*/
+    margin-right: 0;
+    width: auto;
     box-sizing: border-box;
     width: 100%;
+  }
+
+  #menu li {
+    color: #F696C5;
+    font-weight: bold;
+    font-size: x-large;
   }
 
   #menuToggle {
@@ -158,10 +170,6 @@ body * {  border: 1px solid red;}
 
     justify-content: center;
   }
-
-  #menuToggle span {
-    display: none;
-  }
 }
 
 
@@ -171,6 +179,6 @@ body * {  border: 1px solid red;}
 
   /* applies to screens wider than 999px */
   body {
-    background: #ccf;
+    background: white;
   }
 }
