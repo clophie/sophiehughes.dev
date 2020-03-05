@@ -148,6 +148,9 @@ p {
   margin: 0;
 }
 
+#about {
+  visibility: hidden;
+}
 
 /* TABLET STYLES */
 
