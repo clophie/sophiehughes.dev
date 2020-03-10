@@ -151,6 +151,7 @@ p {
 #aboutText {
   display: none;
   margin: 16% 10% 0 4.5%;
+  font-size: 1.2vw;
 }
 
 /* TABLET STYLES */
