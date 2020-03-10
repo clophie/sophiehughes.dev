@@ -148,8 +148,9 @@ p {
   margin: 0;
 }
 
-#about {
-  visibility: hidden;
+#aboutText {
+  display: none;
+  margin: 16% 10% 0 4.5%;
 }
 
 /* TABLET STYLES */
@@ -219,7 +220,7 @@ p {
     display: inline-block;
   }
 
-  #persistentContent {
+  #content {
     display: flex;
   }
 
