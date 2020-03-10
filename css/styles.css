@@ -212,9 +212,9 @@ p {
   }
 
   #name {
-    font-size: 12.7vw;
+    font-size: 12vw;
     width: 45%;
-    margin: 20% 10% 0 6.5%;
+    margin: 22% 10% 0 6.5%;
     color: #F696C5;
     display: inline-block;
   }
@@ -269,7 +269,7 @@ p {
   }
 
   #name {
-    font-size: 7vw;
+    font-size: 8.5vw;
     width: 30%;
     color: #F696C5;
     margin: 16% 10% 0 4.5%;
