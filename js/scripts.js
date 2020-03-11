@@ -47,24 +47,33 @@ fetch('https://api.jikan.moe/v3/user/clophie/animelist/watching')
 const populateTable = (data) => {
 
   // helper function
-  function addCell(tr, text) {
+  const addCell = (tr, text, img) => {
     let td = tr.insertCell();
-    td.textContent = text;
+
+    if (img === 0) {
+      td.textContent = text;
+    } else if (img === 1) {
+      let img = document.createElement('img');
+      img.src = text;
+      img.className = "animeImage";
+      td.appendChild(img);
+    }
+
     return td;
-  }
+  };
 
   // create header
   let tableHead = table.createTHead();
   let headerRow = tableHead.insertRow();
-  addCell(headerRow, '');
-  addCell(headerRow, 'Title');
-  addCell(headerRow, 'Episodes Watched');
+  addCell(headerRow, '', 0);
+  addCell(headerRow, 'Title', 0);
+  addCell(headerRow, 'Episodes Watched', 0);
 
   // insert data
   data.anime.forEach((item) => {
     let row = table.insertRow();
-    addCell(row, item.image_url);
-    addCell(row, item.title);
-    addCell(row, item.watched_episodes + '/' + item.total_episodes);
+    addCell(row, item.image_url, 1);
+    addCell(row, item.title, 0);
+    addCell(row, item.watched_episodes + '/' + item.total_episodes, 0);
   });
 };
