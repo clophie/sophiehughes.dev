@@ -150,8 +150,14 @@ p {
 
 #aboutText {
   display: none;
-  margin: 16% 10% 0 4.5%;
+  margin: 10% 10% 0 5%;
   font-size: 1.2vw;
+  text-align: justify;
+  width: 30%;
+}
+
+#animeTable {
+  display: none;
 }
 
 /* TABLET STYLES */
@@ -219,6 +225,7 @@ p {
     margin: 22% 10% 0 6.5%;
     color: #F696C5;
     display: inline-block;
+    transition: visibility 0s, opacity 0.5s linear;
   }
 
   #content {
