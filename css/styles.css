@@ -148,6 +148,37 @@ p {
   margin: 0;
 }
 
+#sideContent {
+  width: 80%;
+  font-size: 4vw;
+  margin: 7% auto 0 auto;
+  text-align: justify;
+}
+
+#aboutText {
+  display: none;
+}
+
+#animeTable {
+  display: none;
+  margin: 5% 0 5% 0;
+}
+
+.animeImage {
+  width: 8vw;
+}
+
+td {
+  border-bottom: 1px solid #AC5C83;
+}
+
+td:nth-child(1) {
+  column-width: 8vw;
+}
+
+td:nth-child(3) {
+  text-align: right;
+}
 
 /* TABLET STYLES */
 
@@ -156,6 +187,11 @@ p {
   /* applies to screens wider than 499px */
   body {
     background: #FFD6EA;
+  }
+
+  /* force the scroll bar to always show */
+  html {
+    overflow-y: scroll;
   }
 
   /* Hide the hamburger menu */
@@ -202,18 +238,38 @@ p {
   }
 
   #mePicture {
-    height: 45%;
-    width: 45%;
+    height: 37%;
+    width: 37%;
     margin: 15% 0 0 5%;
+    display: inline-block;
   }
 
   #name {
-    font-size: 12.7vw;
+    font-size: 12vw;
     width: 45%;
-    margin: 1% 0 0 5%;
+    margin: 22% 10% 0 6.5%;
     color: #F696C5;
+    display: inline-block;
+    transition: visibility 0s, opacity 0.5s linear;
   }
 
+  #content {
+    display: flex;
+  }
+
+  #sideContent {
+    width: 43%;
+    font-size: 2vw;
+    margin: 15% 0 0 7.3%;
+  }
+
+  .animeImage {
+    width: 4vw;
+  }
+
+  td:nth-child(1) {
+    column-width: 4vw;
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -223,16 +279,22 @@ p {
   }
 
   #mePicture {
-    height: 40%;
-    width: 40%;
+    height: 35%;
+    width: 35%;
     margin: 10% 0 0 10%;
   }
 
   #name {
     font-size: 11vw;
     width: 40%;
-    margin: 1% 0 0 10%;
     color: #F696C5;
+    margin: 16% 10% 0 4.5%;
+  }
+
+  #sideContent {
+    width: 40%;
+    font-size: 1.8vw;
+    margin: 10% 10% 0 4.5%;
   }
 }
 
@@ -254,15 +316,20 @@ p {
   }
 
   #mePicture {
-    height: 25%;
-    width: 25%;
-    margin: 7% 0 0 18%;;
+    height: 27%;
+    width: 27%;
+    margin: 10% 0 0 18%;
   }
 
   #name {
-    font-size: 7vw;
+    font-size: 8.5vw;
     width: 30%;
-    margin: 1% 10% 0 18%;
     color: #F696C5;
+    margin: 16% 10% 0 4.5%;
+  }
+
+  #sideContent {
+    width: 30%;
+    font-size: 1.2vw;
   }
 }
