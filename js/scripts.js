@@ -25,6 +25,7 @@ let clickEvent = (() => {
     return 'click';
 })();
 
+// make the about button show/hide the appropriate content
 aboutButton.addEventListener(clickEvent, () => {
   if (name.style.display === "none") {
     name.style.display = "inline-block";
@@ -37,7 +38,7 @@ aboutButton.addEventListener(clickEvent, () => {
   }
 });
 
-// Request the Jikan API in order to get a list of currently watching anime
+// request the Jikan API in order to get a list of currently watching anime
 fetch('https://api.jikan.moe/v3/user/clophie/animelist/watching')
   .then(response => response.json())
   .then(data => {

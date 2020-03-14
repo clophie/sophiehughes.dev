@@ -148,21 +148,24 @@ p {
   margin: 0;
 }
 
+#sideContent {
+  width: 80%;
+  font-size: 4vw;
+  margin: 7% auto 0 auto;
+  text-align: justify;
+}
+
 #aboutText {
   display: none;
-  margin: 10% 10% 0 5%;
-  font-size: 1.2vw;
-  text-align: justify;
-  width: 30%;
 }
 
 #animeTable {
   display: none;
-  margin: 5% 0 0 0;
+  margin: 5% 0 5% 0;
 }
 
 .animeImage {
-  width: 4vw;
+  width: 8vw;
 }
 
 td {
@@ -170,7 +173,7 @@ td {
 }
 
 td:nth-child(1) {
-  column-width: 4vw;
+  column-width: 8vw;
 }
 
 td:nth-child(3) {
@@ -184,6 +187,11 @@ td:nth-child(3) {
   /* applies to screens wider than 499px */
   body {
     background: #FFD6EA;
+  }
+
+  /* force the scroll bar to always show */
+  html {
+    overflow-y: scroll;
   }
 
   /* Hide the hamburger menu */
@@ -248,6 +256,20 @@ td:nth-child(3) {
   #content {
     display: flex;
   }
+
+  #sideContent {
+    width: 43%;
+    font-size: 2vw;
+    margin: 15% 0 0 7.3%;
+  }
+
+  .animeImage {
+    width: 4vw;
+  }
+
+  td:nth-child(1) {
+    column-width: 4vw;
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -267,6 +289,12 @@ td:nth-child(3) {
     width: 40%;
     color: #F696C5;
     margin: 16% 10% 0 4.5%;
+  }
+
+  #sideContent {
+    width: 40%;
+    font-size: 1.8vw;
+    margin: 10% 10% 0 4.5%;
   }
 }
 
@@ -298,5 +326,10 @@ td:nth-child(3) {
     width: 30%;
     color: #F696C5;
     margin: 16% 10% 0 4.5%;
+  }
+
+  #sideContent {
+    width: 30%;
+    font-size: 1.2vw;
   }
 }
