@@ -7,7 +7,7 @@ const photoButton = document.querySelector("#photoButton");
 const name = document.querySelector("#name");
 const aboutText = document.querySelector("#aboutText");
 const navBar = document.querySelector("#navBar");
-let table = document.querySelector("#animeTable");
+let animeTable = document.querySelector("#animeTable");
 let animeJson = '';
 
 function burgerToggle() {
@@ -30,11 +30,11 @@ aboutButton.addEventListener(clickEvent, () => {
   if (name.style.display === "none") {
     name.style.display = "inline-block";
     aboutText.style.display = "none";
-    table.style.display = "none;"
+    animeTable.style.display = "none;"
   } else {
     name.style.display = "none";
     aboutText.style.display = "inline-block";
-    table.style.display = "inline-block";
+    animeTable.style.display = "inline-block";
   }
 });
 
@@ -64,7 +64,7 @@ const populateTable = (data) => {
   };
 
   // create header
-  let tableHead = table.createTHead();
+  let tableHead = animeTable.createTHead();
   let headerRow = tableHead.insertRow();
   addCell(headerRow, '', 0);
   addCell(headerRow, 'Title', 0);
@@ -72,7 +72,7 @@ const populateTable = (data) => {
 
   // insert data
   data.anime.forEach((item) => {
-    let row = table.insertRow();
+    let row = animeTable.insertRow();
     addCell(row, item.image_url, 1);
     addCell(row, item.title, 0);
     addCell(row, item.watched_episodes + '/' + item.total_episodes, 0);

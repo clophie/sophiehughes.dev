@@ -159,6 +159,10 @@ p {
   display: none;
 }
 
+#projectsContent {
+  display: none;
+}
+
 #animeTable {
   display: none;
   margin: 5% 0 5% 0;
