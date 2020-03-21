@@ -30,58 +30,22 @@ let clickEvent = (() => {
 
 // make the about button show/hide the appropriate content
 aboutButton.addEventListener(clickEvent, () => {
-  if (aboutContent.style.display === "none") {
-    name.style.display = "none";
-    projectsContent.style.display = "none";
-    experienceContent.style.display = "none";
-    photoContent.style.display = "none";
-    aboutContent.style.display = "inline-block";
-  } else {
-    aboutContent.style.display = "none";
-    name.style.display = "inline-block";
-  }
+  navigationClicked(aboutContent)
 });
 
 // make the projects button show/hide the appropriate content
 projectsButton.addEventListener(clickEvent, () => {
-  if (projectsContent.style.display === "none") {
-    name.style.display = "none";
-    aboutContent.style.display = "none";
-    experienceContent.style.display = "none";
-    photoContent.style.display = "none";
-    projectsContent.style.display = "inline-block";
-  } else {
-    projectsContent.style.display = "none";
-    name.style.display = "inline-block";
-  }
+  navigationClicked(projectsContent)
 });
 
 // make the experience button show/hide the appropriate content
 experienceButton.addEventListener(clickEvent, () => {
-  if (experienceContent.style.display === "none") {
-    name.style.display = "none";
-    aboutContent.style.display = "none";
-    projectsContent.style.display = "none";
-    photoContent.style.display = "none";
-    experienceContent.style.display = "inline-block";
-  } else {
-    experienceContent.style.display = "none";
-    name.style.display = "inline-block";
-  }
+  navigationClicked(experienceContent)
 });
 
 // make the photography button show/hide the appropriate content
 photoButton.addEventListener(clickEvent, () => {
-  if (photoContent.style.display === "none") {
-    name.style.display = "none";
-    aboutContent.style.display = "none";
-    projectsContent.style.display = "none";
-    experienceContent.style.display = "none";
-    photoContent.style.display = "inline-block";
-  } else {
-    photoContent.style.display = "none";
-    name.style.display = "inline-block";
-  }
+  navigationClicked(photoContent)
 });
 
 // request the Jikan API in order to get a list of currently watching anime
@@ -123,4 +87,23 @@ const populateTable = (data) => {
     addCell(row, item.title, 0);
     addCell(row, item.watched_episodes + '/' + item.total_episodes, 0);
   });
+};
+
+const navigationClicked = (contentToShow) => {
+  if (contentToShow.style.display === "none" || contentToShow.style.display === "") {
+    name.style.display = "none";
+    let contentElements = document.getElementsByClassName("content");
+
+    for(let i = 0; i < contentElements.length; i++) {
+      if (contentElements[i] !== contentToShow) {
+        contentElements[i].style.display = "none";
+      }
+    }
+
+    contentToShow.style.display = "inline-block";
+  }
+  else {
+    contentToShow.style.display = "none";
+    name.style.display = "inline-block";
+  }
 };
