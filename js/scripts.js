@@ -5,7 +5,10 @@ const projectsButton = document.querySelector("#projectsButton");
 const experienceButton = document.querySelector("#experienceButton");
 const photoButton = document.querySelector("#photoButton");
 const name = document.querySelector("#name");
-const aboutText = document.querySelector("#aboutText");
+const aboutContent = document.querySelector("#aboutContent");
+const projectsContent = document.querySelector("#projectsContent");
+const experienceContent = document.querySelector("#experienceContent");
+const photoContent = document.querySelector("#photoContent");
 const navBar = document.querySelector("#navBar");
 let animeTable = document.querySelector("#animeTable");
 let animeJson = '';
@@ -27,14 +30,57 @@ let clickEvent = (() => {
 
 // make the about button show/hide the appropriate content
 aboutButton.addEventListener(clickEvent, () => {
-  if (name.style.display === "none") {
-    name.style.display = "inline-block";
-    aboutText.style.display = "none";
-    animeTable.style.display = "none;"
-  } else {
+  if (aboutContent.style.display === "none") {
     name.style.display = "none";
-    aboutText.style.display = "inline-block";
-    animeTable.style.display = "inline-block";
+    projectsContent.style.display = "none";
+    experienceContent.style.display = "none";
+    photoContent.style.display = "none";
+    aboutContent.style.display = "inline-block";
+  } else {
+    aboutContent.style.display = "none";
+    name.style.display = "inline-block";
+  }
+});
+
+// make the projects button show/hide the appropriate content
+projectsButton.addEventListener(clickEvent, () => {
+  if (projectsContent.style.display === "none") {
+    name.style.display = "none";
+    aboutContent.style.display = "none";
+    experienceContent.style.display = "none";
+    photoContent.style.display = "none";
+    projectsContent.style.display = "inline-block";
+  } else {
+    projectsContent.style.display = "none";
+    name.style.display = "inline-block";
+  }
+});
+
+// make the experience button show/hide the appropriate content
+experienceButton.addEventListener(clickEvent, () => {
+  if (experienceContent.style.display === "none") {
+    name.style.display = "none";
+    aboutContent.style.display = "none";
+    projectsContent.style.display = "none";
+    photoContent.style.display = "none";
+    experienceContent.style.display = "inline-block";
+  } else {
+    experienceContent.style.display = "none";
+    name.style.display = "inline-block";
+  }
+});
+
+// make the photography button show/hide the appropriate content
+photoButton.addEventListener(clickEvent, () => {
+  if (photoContent.style.display === "none") {
+    name.style.display = "none";
+    aboutContent.style.display = "none";
+    projectsContent.style.display = "none";
+    experienceContent.style.display = "none";
+    photoContent.style.display = "inline-block";
+  } else {
+    photoContent.style.display = "none";
+    name.style.display = "inline-block";
   }
 });
 

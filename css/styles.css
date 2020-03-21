@@ -163,8 +163,15 @@ p {
   display: none;
 }
 
-#animeTable {
+#experienceContent {
   display: none;
+}
+
+#photoContent {
+  display: none;
+}
+
+#animeTable {
   margin: 5% 0 5% 0;
 }
 
