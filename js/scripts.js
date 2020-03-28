@@ -11,7 +11,6 @@ const experienceContent = document.querySelector("#experienceContent");
 const photoContent = document.querySelector("#photoContent");
 const navBar = document.querySelector("#navBar");
 let animeTable = document.querySelector("#animeTable");
-let animeJson = '';
 
 function burgerToggle() {
   if (navBar.className === "navBar") {
@@ -53,7 +52,8 @@ fetch('https://api.jikan.moe/v3/user/clophie/animelist/watching')
   .then(response => response.json())
   .then(data => {
     console.log(data);
-    populateTable(data);});
+    populateTable(data);
+  });
 
 const populateTable = (data) => {
 
@@ -94,15 +94,14 @@ const navigationClicked = (contentToShow) => {
     name.style.display = "none";
     let contentElements = document.getElementsByClassName("content");
 
-    for(let i = 0; i < contentElements.length; i++) {
+    for (let i = 0; i < contentElements.length; i++) {
       if (contentElements[i] !== contentToShow) {
         contentElements[i].style.display = "none";
       }
     }
 
     contentToShow.style.display = "inline-block";
-  }
-  else {
+  } else {
     contentToShow.style.display = "none";
     name.style.display = "inline-block";
   }
