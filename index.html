@@ -18,18 +18,18 @@
   <span></span>
 
   <ul id="menu">
-    <a class="menuItem" id="aboutButton" href="#">
-      <li>About</li>
-    </a>
-    <a class="menuItem" id="projectsButton" href="#">
-      <li>Projects</li>
-    </a>
-    <a class="menuItem" id="experienceButton" href="#">
-      <li>Experience</li>
-    </a>
-    <a class="menuItem" id="photoButton" href="#">
-      <li>Photography</li>
-    </a>
+    <li class="menuItem" id="aboutButton">
+      <a>About</a>
+    </li>
+    <li class="menuItem" id="projectsButton">
+      <a>Projects</a>
+    </li>
+    <li class="menuItem" id="experienceButton">
+      <a>Experience</a>
+    </li>
+    <li class="menuItem" id="photoButton">
+      <a>Photography</a>
+    </li>
   </ul>
 </nav>
 
@@ -55,8 +55,15 @@
     </div>
 
     <div id="projectsContent" class="content">
-      <p>Here's a list of my completed and currently in progress projects. The list is in order, with the most recent projects being at the top.</p>
-      <table id="projectsTable"></table>
+      <p>Here's a list of my completed and currently in progress projects. The code for the below can all be found on my Github!</p>
+      <div id="projectsGrid">
+        <a class="title ygo" href="https://twitter.com/ygobanlistbot">Yugioh Banlist Bot</a>
+        <div class="desc ygo">A twitter bot that sends a tweet when the Yugioh banlist has been updated</div>
+        <a class="title website" href="https://sophiehughes.dev/">Previous Personal Website</a>
+        <div class="desc website">A website I made to brush up on my basic front-end skills.</div>
+        <div class="title daylight">DayLight (WIP)</div>
+        <div class="desc daylight">My final year project - a mood and habit tracking Android app.</div>
+      </div>
     </div>
 
     <div id="experienceContent" class="content">

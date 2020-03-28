@@ -191,6 +191,32 @@ td:nth-child(3) {
   text-align: right;
 }
 
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto auto auto;
+}
+
+#title {
+  grid-column-start: 1;
+}
+
+#desc {
+  grid-column-start: 2;
+}
+
+#ygo {
+  grid-row-start: 1;
+}
+
+#website {
+  grid-row-start: 2;
+}
+
+#daylight {
+  grid-row-start: 3;
+}
+
 /* TABLET STYLES */
 
 @media screen and (min-width: 600px) {
@@ -229,13 +255,13 @@ td:nth-child(3) {
   .menuItem {
     box-sizing: border-box;
     width: 90%;
+    cursor: pointer;
   }
 
   #menu li {
     color: #F696C5;
     font-weight: bold;
     font-size: 3vw;
-    min-font-size: x-large;
   }
 
   #menuToggle {
@@ -246,6 +272,10 @@ td:nth-child(3) {
     left: 0;
 
     justify-content: center;
+  }
+
+  #menuToggle a {
+    color: #F696C5;
   }
 
   #mePicture {
