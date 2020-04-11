@@ -15,6 +15,16 @@ body {
   background-color: white;
 }
 
+/* LINK STYLES */
+
+a {
+  color: #F696C5;
+}
+
+a:hover {
+  color: #FFD6EA;
+}
+
 /*body * {  border: 1px solid red;}*/
 
 #menuToggle {
@@ -199,6 +209,10 @@ td:nth-child(3) {
 
 #projectsTable {
   margin-top: 5%;
+}
+
+#projectsTable td {
+  padding: 1% 2% 2% 1%;
 }
 
 /* TABLET STYLES */
