@@ -9,6 +9,10 @@ body {
 
   color: #AC5C83;
   font-family: space_monoregular, "Roboto Mono", monospace;
+  background-image: url("../media/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
 }
 
 /*body * {  border: 1px solid red;}*/
@@ -223,7 +227,6 @@ td:nth-child(3) {
 
   /* applies to screens wider than 499px */
   body {
-    background: #FFD6EA;
   }
 
   /* force the scroll bar to always show */
@@ -344,7 +347,7 @@ td:nth-child(3) {
 @media screen and (min-width: 1200px) {
 
   body {
-    background: white;
+
   }
 
   #menu {
