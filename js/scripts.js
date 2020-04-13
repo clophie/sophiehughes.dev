@@ -5,10 +5,12 @@ const projectsButton = document.querySelector("#projectsButton");
 const experienceButton = document.querySelector("#experienceButton");
 const photoButton = document.querySelector("#photoButton");
 const name = document.querySelector("#name");
-const aboutText = document.querySelector("#aboutText");
+const aboutContent = document.querySelector("#aboutContent");
+const projectsContent = document.querySelector("#projectsContent");
+const experienceContent = document.querySelector("#experienceContent");
+const photoContent = document.querySelector("#photoContent");
 const navBar = document.querySelector("#navBar");
-let table = document.querySelector("#animeTable");
-let animeJson = '';
+let animeTable = document.querySelector("#animeTable");
 
 function burgerToggle() {
   if (navBar.className === "navBar") {
@@ -27,15 +29,22 @@ let clickEvent = (() => {
 
 // make the about button show/hide the appropriate content
 aboutButton.addEventListener(clickEvent, () => {
-  if (name.style.display === "none") {
-    name.style.display = "inline-block";
-    aboutText.style.display = "none";
-    table.style.display = "none;"
-  } else {
-    name.style.display = "none";
-    aboutText.style.display = "inline-block";
-    table.style.display = "inline-block";
-  }
+  navigationClicked(aboutContent)
+});
+
+// make the projects button show/hide the appropriate content
+projectsButton.addEventListener(clickEvent, () => {
+  navigationClicked(projectsContent)
+});
+
+// make the experience button show/hide the appropriate content
+experienceButton.addEventListener(clickEvent, () => {
+  navigationClicked(experienceContent)
+});
+
+// make the photography button show/hide the appropriate content
+photoButton.addEventListener(clickEvent, () => {
+  navigationClicked(photoContent)
 });
 
 // request the Jikan API in order to get a list of currently watching anime
@@ -43,7 +52,8 @@ fetch('https://api.jikan.moe/v3/user/clophie/animelist/watching')
   .then(response => response.json())
   .then(data => {
     console.log(data);
-    populateTable(data);});
+    populateTable(data);
+  });
 
 const populateTable = (data) => {
 
@@ -64,7 +74,7 @@ const populateTable = (data) => {
   };
 
   // create header
-  let tableHead = table.createTHead();
+  let tableHead = animeTable.createTHead();
   let headerRow = tableHead.insertRow();
   addCell(headerRow, '', 0);
   addCell(headerRow, 'Title', 0);
@@ -72,9 +82,27 @@ const populateTable = (data) => {
 
   // insert data
   data.anime.forEach((item) => {
-    let row = table.insertRow();
+    let row = animeTable.insertRow();
     addCell(row, item.image_url, 1);
     addCell(row, item.title, 0);
     addCell(row, item.watched_episodes + '/' + item.total_episodes, 0);
   });
+};
+
+const navigationClicked = (contentToShow) => {
+  if (contentToShow.style.display === "none" || contentToShow.style.display === "") {
+    name.style.display = "none";
+    let contentElements = document.getElementsByClassName("content");
+
+    for (let i = 0; i < contentElements.length; i++) {
+      if (contentElements[i] !== contentToShow) {
+        contentElements[i].style.display = "none";
+      }
+    }
+
+    contentToShow.style.display = "inline-block";
+  } else {
+    contentToShow.style.display = "none";
+    name.style.display = "inline-block";
+  }
 };

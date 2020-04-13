@@ -9,6 +9,20 @@ body {
 
   color: #AC5C83;
   font-family: space_monoregular, "Roboto Mono", monospace;
+  background-image: url("../media/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+}
+
+/* LINK STYLES */
+
+a {
+  color: #F696C5;
+}
+
+a:hover {
+  color: #FFD6EA;
 }
 
 /*body * {  border: 1px solid red;}*/
@@ -155,18 +169,31 @@ p {
   text-align: justify;
 }
 
-#aboutText {
+#aboutContent {
+  display: none;
+}
+
+#projectsContent {
+  display: none;
+}
+
+#experienceContent {
+  display: none;
+}
+
+#photoContent {
   display: none;
 }
 
 #animeTable {
-  display: none;
   margin: 5% 0 5% 0;
 }
 
 .animeImage {
   width: 8vw;
 }
+
+/* TABLE STYLES */
 
 td {
   border-bottom: 1px solid #AC5C83;
@@ -180,13 +207,20 @@ td:nth-child(3) {
   text-align: right;
 }
 
+#projectsTable {
+  margin-top: 5%;
+}
+
+#projectsTable td {
+  padding: 1% 2% 2% 1%;
+}
+
 /* TABLET STYLES */
 
 @media screen and (min-width: 600px) {
 
   /* applies to screens wider than 499px */
   body {
-    background: #FFD6EA;
   }
 
   /* force the scroll bar to always show */
@@ -218,13 +252,13 @@ td:nth-child(3) {
   .menuItem {
     box-sizing: border-box;
     width: 90%;
+    cursor: pointer;
   }
 
   #menu li {
     color: #F696C5;
     font-weight: bold;
     font-size: 3vw;
-    min-font-size: x-large;
   }
 
   #menuToggle {
@@ -235,6 +269,10 @@ td:nth-child(3) {
     left: 0;
 
     justify-content: center;
+  }
+
+  #menuToggle a {
+    color: #F696C5;
   }
 
   #mePicture {
@@ -303,7 +341,7 @@ td:nth-child(3) {
 @media screen and (min-width: 1200px) {
 
   body {
-    background: white;
+
   }
 
   #menu {
