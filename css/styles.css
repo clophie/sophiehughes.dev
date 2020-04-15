@@ -217,8 +217,10 @@ td:nth-child(3) {
 
 /* PHOTO GALLERY STYLES */
 
-#photoGallery {
-  
+.photoGallery {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #F696C5;
 }
 
 /* TABLET STYLES */

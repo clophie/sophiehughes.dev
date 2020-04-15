@@ -11,14 +11,7 @@ const experienceContent = document.querySelector("#experienceContent");
 const photoContent = document.querySelector("#photoContent");
 const navBar = document.querySelector("#navBar");
 let animeTable = document.querySelector("#animeTable");
-
-function burgerToggle() {
-  if (navBar.className === "navBar") {
-    navBar.className += " responsive";
-  } else {
-    navBar.className = "navBar";
-  }
-}
+const images = document.getElementsByClassName("photoGallery");
 
 let clickEvent = (() => {
   if ('ontouchstart' in document.documentElement)
@@ -88,6 +81,8 @@ const populateTable = (data) => {
   });
 };
 
+
+// Function to handle showing and hiding of elements based on what nav button was clicked
 const navigationClicked = (contentToShow) => {
   if (contentToShow.style.display === "none" || contentToShow.style.display === "") {
     name.style.display = "none";
@@ -105,3 +100,5 @@ const navigationClicked = (contentToShow) => {
     name.style.display = "inline-block";
   }
 };
+
+Array.from(images).forEach(x => x.style.maxWidth = `${(Math.floor(Math.random() * 20) + 5).toString}%`);
