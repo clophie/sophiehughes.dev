@@ -215,6 +215,12 @@ td:nth-child(3) {
   padding: 1% 2% 2% 1%;
 }
 
+/* PHOTO GALLERY STYLES */
+
+#photoGallery {
+  
+}
+
 /* TABLET STYLES */
 
 @media screen and (min-width: 600px) {

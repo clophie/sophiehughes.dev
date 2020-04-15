@@ -51,7 +51,6 @@ photoButton.addEventListener(clickEvent, () => {
 fetch('https://api.jikan.moe/v3/user/clophie/animelist/watching')
   .then(response => response.json())
   .then(data => {
-    console.log(data);
     populateTable(data);
   });
 
