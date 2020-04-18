@@ -5,20 +5,15 @@ const projectsButton = document.querySelector("#projectsButton");
 const experienceButton = document.querySelector("#experienceButton");
 const photoButton = document.querySelector("#photoButton");
 const name = document.querySelector("#name");
+const portrait = document.querySelector("#mePicture");
 const aboutContent = document.querySelector("#aboutContent");
 const projectsContent = document.querySelector("#projectsContent");
+const banlistBotCell = document.querySelector("#banlistBot");
+const previousSiteCell = document.querySelector("#previousSite");
 const experienceContent = document.querySelector("#experienceContent");
 const photoContent = document.querySelector("#photoContent");
-const navBar = document.querySelector("#navBar");
 let animeTable = document.querySelector("#animeTable");
-
-function burgerToggle() {
-  if (navBar.className === "navBar") {
-    navBar.className += " responsive";
-  } else {
-    navBar.className = "navBar";
-  }
-}
+const images = document.getElementsByClassName("galleryImage");
 
 let clickEvent = (() => {
   if ('ontouchstart' in document.documentElement)
@@ -51,7 +46,6 @@ photoButton.addEventListener(clickEvent, () => {
 fetch('https://api.jikan.moe/v3/user/clophie/animelist/watching')
   .then(response => response.json())
   .then(data => {
-    console.log(data);
     populateTable(data);
   });
 
@@ -89,6 +83,8 @@ const populateTable = (data) => {
   });
 };
 
+
+// Function to handle showing and hiding of elements based on what nav button was clicked
 const navigationClicked = (contentToShow) => {
   if (contentToShow.style.display === "none" || contentToShow.style.display === "") {
     name.style.display = "none";
@@ -106,3 +102,24 @@ const navigationClicked = (contentToShow) => {
     name.style.display = "inline-block";
   }
 };
+
+// Functions to handle changing the portrait image on the hover of a gallery image
+const imageMouseEnter = (image) => {
+  portrait.src = image
+};
+
+const imageMouseLeave = () => {
+  portrait.src = "media/me.jpg"
+};
+
+Array.from(images).forEach(x => x.addEventListener("mouseenter", () => imageMouseEnter(x.src), false));
+Array.from(images).forEach(x => x.addEventListener("mouseleave", () => imageMouseLeave(), false));
+
+Array.from(images).forEach(x => x.addEventListener("ontouchstart", () => imageMouseEnter(x.src), false));
+Array.from(images).forEach(x => x.addEventListener("ontouchend", () => imageMouseLeave(), false));
+
+banlistBotCell.addEventListener("mouseenter", () => imageMouseEnter("media/banlistbot.jpg"), false);
+banlistBotCell.addEventListener("mouseleave", () => imageMouseLeave(), false);
+
+previousSiteCell.addEventListener("mouseenter", () => imageMouseEnter("media/previoussite.jpg"), false);
+previousSiteCell.addEventListener("mouseleave", () => imageMouseLeave(), false);
