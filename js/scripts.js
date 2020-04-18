@@ -113,3 +113,6 @@ const galleryImageMouseLeave = () => {
 
 Array.from(images).forEach(x => x.addEventListener("mouseenter", () => galleryImageMouseEnter(x.src), false));
 Array.from(images).forEach(x => x.addEventListener("mouseleave", () => galleryImageMouseLeave(), false));
+
+Array.from(images).forEach(x => x.addEventListener("ontouchstart", () => galleryImageMouseEnter(x.src), false));
+Array.from(images).forEach(x => x.addEventListener("ontouchend", () => galleryImageMouseLeave(), false));
