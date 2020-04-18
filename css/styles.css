@@ -224,12 +224,13 @@ td:nth-child(3) {
   border-color: #F696C5;
   display: inline-block;
   width: 100%;
+
+  transition: opacity .25s ease-in-out, border .25s ease-in-out;
 }
 
 .galleryImage:hover {
-  width: 90%;
-  margin: 5% 5% 5% 5%;
-  border-color: #AC5C83;
+  opacity: 50%;
+  border-color: white;
 }
 
 #gallery {

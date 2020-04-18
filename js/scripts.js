@@ -5,6 +5,7 @@ const projectsButton = document.querySelector("#projectsButton");
 const experienceButton = document.querySelector("#experienceButton");
 const photoButton = document.querySelector("#photoButton");
 const name = document.querySelector("#name");
+const portrait = document.querySelector("#mePicture");
 const aboutContent = document.querySelector("#aboutContent");
 const projectsContent = document.querySelector("#projectsContent");
 const experienceContent = document.querySelector("#experienceContent");
@@ -99,3 +100,16 @@ const navigationClicked = (contentToShow) => {
     name.style.display = "inline-block";
   }
 };
+
+// Functions to handle changing the portrait image on the hover of a gallery image
+
+const galleryImageMouseEnter = (image) => {
+  portrait.src = image
+};
+
+const galleryImageMouseLeave = () => {
+  portrait.src = "media/me.jpg"
+};
+
+Array.from(images).forEach(x => x.addEventListener("mouseenter", () => galleryImageMouseEnter(x.src), false));
+Array.from(images).forEach(x => x.addEventListener("mouseleave", () => galleryImageMouseLeave(), false));
