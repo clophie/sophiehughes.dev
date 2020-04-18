@@ -209,6 +209,7 @@ td:nth-child(3) {
 
 #projectsTable {
   margin-top: 5%;
+  margin-bottom: 7%;
 }
 
 #projectsTable td {
@@ -217,10 +218,25 @@ td:nth-child(3) {
 
 /* PHOTO GALLERY STYLES */
 
-.photoGallery {
+.galleryImage {
   border-radius: 50%;
   border-style: solid;
   border-color: #F696C5;
+  display: inline-block;
+  width: 100%;
+}
+
+.galleryImage:hover {
+  width: 90%;
+  margin: 5% 5% 5% 5%;
+  border-color: #AC5C83;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  grid-gap: 4%;
 }
 
 /* TABLET STYLES */

@@ -9,9 +9,8 @@ const aboutContent = document.querySelector("#aboutContent");
 const projectsContent = document.querySelector("#projectsContent");
 const experienceContent = document.querySelector("#experienceContent");
 const photoContent = document.querySelector("#photoContent");
-const navBar = document.querySelector("#navBar");
 let animeTable = document.querySelector("#animeTable");
-const images = document.getElementsByClassName("photoGallery");
+const images = document.getElementsByClassName("galleryImage");
 
 let clickEvent = (() => {
   if ('ontouchstart' in document.documentElement)
@@ -100,5 +99,3 @@ const navigationClicked = (contentToShow) => {
     name.style.display = "inline-block";
   }
 };
-
-Array.from(images).forEach(x => x.style.maxWidth = `${(Math.floor(Math.random() * 20) + 5).toString}%`);
