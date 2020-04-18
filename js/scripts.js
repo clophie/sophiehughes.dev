@@ -8,6 +8,8 @@ const name = document.querySelector("#name");
 const portrait = document.querySelector("#mePicture");
 const aboutContent = document.querySelector("#aboutContent");
 const projectsContent = document.querySelector("#projectsContent");
+const banlistBotCell = document.querySelector("#banlistBot");
+const previousSiteCell = document.querySelector("#previousSite");
 const experienceContent = document.querySelector("#experienceContent");
 const photoContent = document.querySelector("#photoContent");
 let animeTable = document.querySelector("#animeTable");
@@ -102,17 +104,22 @@ const navigationClicked = (contentToShow) => {
 };
 
 // Functions to handle changing the portrait image on the hover of a gallery image
-
-const galleryImageMouseEnter = (image) => {
+const imageMouseEnter = (image) => {
   portrait.src = image
 };
 
-const galleryImageMouseLeave = () => {
+const imageMouseLeave = () => {
   portrait.src = "media/me.jpg"
 };
 
-Array.from(images).forEach(x => x.addEventListener("mouseenter", () => galleryImageMouseEnter(x.src), false));
-Array.from(images).forEach(x => x.addEventListener("mouseleave", () => galleryImageMouseLeave(), false));
+Array.from(images).forEach(x => x.addEventListener("mouseenter", () => imageMouseEnter(x.src), false));
+Array.from(images).forEach(x => x.addEventListener("mouseleave", () => imageMouseLeave(), false));
 
-Array.from(images).forEach(x => x.addEventListener("ontouchstart", () => galleryImageMouseEnter(x.src), false));
-Array.from(images).forEach(x => x.addEventListener("ontouchend", () => galleryImageMouseLeave(), false));
+Array.from(images).forEach(x => x.addEventListener("ontouchstart", () => imageMouseEnter(x.src), false));
+Array.from(images).forEach(x => x.addEventListener("ontouchend", () => imageMouseLeave(), false));
+
+banlistBotCell.addEventListener("mouseenter", () => imageMouseEnter("media/banlistbot.jpg"), false);
+banlistBotCell.addEventListener("mouseleave", () => imageMouseLeave(), false);
+
+previousSiteCell.addEventListener("mouseenter", () => imageMouseEnter("media/previoussite.jpg"), false);
+previousSiteCell.addEventListener("mouseleave", () => imageMouseLeave(), false);
