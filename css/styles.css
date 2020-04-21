@@ -179,6 +179,7 @@ p {
 
 #todoContent {
   display: none;
+  width: 100%;
 }
 
 #photoContent {
@@ -257,12 +258,73 @@ td:nth-child(3) {
 
 /* TO DO LIST STYLES */
 
+.todoLabel {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+#todoLabel {
+  display: block;
+}
+
+.todoInput {
+  margin: 4% 0 4% 0;
+}
+
+#todoForm {
+  width: 100%;
+}
+
+#todoText {
+  width: 90%;
+  height: 2vw;
+  padding: 5%;
+  overflow: visible;
+  resize: vertical;
+  border-style: solid;
+  border-color: #F696C5;
+  border-width: medium;
+  border-radius: 4px;
+  font-size: large;
+}
+
+#todoSubmit {
+  display: inline-block;
+  background-color: #F696C5;
+  color: white;
+  font-size: large;
+  font-family: space_monoregular, "Roboto Mono", monospace;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 3% 3% 3% 3%;
+  cursor: pointer;
+  float: right;
+}
+
+#todoResults {
+  margin: 3% 0 7% 0;
+  padding: 0;
+}
+
+#todoResults li {
+  cursor: pointer;
+  list-style-type: none;
+  list-style-position: inside;
+  border-radius: 4px;
+  padding: 4% 2% 4% 2%;
+  margin: 3% 0 0 0;
+  background: white;
+}
+
 .important {
-  color: red;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .checked {
-  color: green;
+  text-decoration: line-through;
+  color: #CA8CAA;
 }
 
 /* TABLET STYLES */
@@ -321,6 +383,10 @@ td:nth-child(3) {
     color: #F696C5;
   }
 
+  #todoButton {
+    width: 40%;
+  }
+
   #mePicture {
     height: 37%;
     width: 37%;
@@ -356,7 +422,6 @@ td:nth-child(3) {
   }
 
   /* SOCIAL LINK STYLES */
-
   #socialLinks {
     width: 8%;
     height: 8%;
@@ -425,7 +490,6 @@ td:nth-child(3) {
   }
 
   /* SOCIAL LINK STYLES */
-
   #socialLinks {
     right: 0;
     width: 10%;

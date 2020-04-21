@@ -26,22 +26,26 @@ let clickEvent = (() => {
 
 // make the about button show/hide the appropriate content
 aboutButton.addEventListener(clickEvent, () => {
-  navigationClicked(aboutContent)
+  navigationClicked(aboutContent);
+  portrait.src = "media/me.jpg";
 });
 
 // make the projects button show/hide the appropriate content
 projectsButton.addEventListener(clickEvent, () => {
-  navigationClicked(projectsContent)
+  navigationClicked(projectsContent);
+  portrait.src = "media/me.jpg";
 });
 
 // make the experience button show/hide the appropriate content
 todoButton.addEventListener(clickEvent, () => {
-  navigationClicked(todoContent)
+  navigationClicked(todoContent);
+  portrait.src = 'media/plainCircle.png';
 });
 
 // make the photography button show/hide the appropriate content
 photoButton.addEventListener(clickEvent, () => {
-  navigationClicked(photoContent)
+  navigationClicked(photoContent);
+  portrait.src = "media/me.jpg";
 });
 
 // request the Jikan API in order to get a list of currently watching anime
@@ -53,7 +57,7 @@ fetch('https://api.jikan.moe/v3/user/clophie/animelist/watching')
 
 const populateTable = (data) => {
 
-  // helper function
+  // Helper function to add a cell
   const addCell = (tr, text, img) => {
     let td = tr.insertCell();
 
@@ -69,14 +73,14 @@ const populateTable = (data) => {
     return td;
   };
 
-  // create header
+  // Create header
   let tableHead = animeTable.createTHead();
   let headerRow = tableHead.insertRow();
   addCell(headerRow, '', 0);
   addCell(headerRow, 'Title', 0);
   addCell(headerRow, 'Episodes Watched', 0);
 
-  // insert data
+  // Insert data
   data.anime.forEach((item) => {
     let row = animeTable.insertRow();
     addCell(row, item.image_url, 1);
@@ -114,12 +118,14 @@ const imageMouseLeave = () => {
   portrait.src = "media/me.jpg"
 };
 
+// Add event listeners for the image gallery to change the left hand side image on hover
 Array.from(images).forEach(x => x.addEventListener("mouseenter", () => imageMouseEnter(x.src), false));
 Array.from(images).forEach(x => x.addEventListener("mouseleave", () => imageMouseLeave(), false));
 
 Array.from(images).forEach(x => x.addEventListener("ontouchstart", () => imageMouseEnter(x.src), false));
 Array.from(images).forEach(x => x.addEventListener("ontouchend", () => imageMouseLeave(), false));
 
+// Add similar event listeners for the projects page
 banlistBotCell.addEventListener("mouseenter", () => imageMouseEnter("media/banlistbot.jpg"), false);
 banlistBotCell.addEventListener("mouseleave", () => imageMouseLeave(), false);
 
@@ -130,15 +136,16 @@ previousSiteCell.addEventListener("mouseleave", () => imageMouseLeave(), false);
 const saveTask = (event) => {
   event.preventDefault();
 
-  let taskValue = document.querySelector("#todoInput").value;
+  let taskValue = document.querySelector("#todoText").value;
   let importantValue = document.querySelector("#todoImportant").checked;
 
+  // Create an object with the current values for task and importance
   let task = {
-    task:taskValue,
-    important:importantValue
+    task: taskValue,
+    important: importantValue
   };
 
-  if(localStorage.getItem('tasks') == null) {
+  if (localStorage.getItem('tasks') == null) {
     localStorage.setItem('tasks', JSON.stringify(task));
   } else {
     let tasks = localStorage.getItem('tasks');
@@ -153,12 +160,13 @@ const saveTask = (event) => {
 // Function to get the tasks from local storage
 const fetchTask = () => {
   todoResults.innerHTML = '';
-  if(localStorage.getItem('tasks') != null) {
+  if (localStorage.getItem('tasks') != null) {
     let tasks = Array.from(JSON.parse(`{"tasks":[${localStorage.getItem('tasks')}]}`).tasks);
 
+    // Create a li element for each task in the list, with the appropriate class based on importance
     tasks.forEach(task => {
       if (task.task != null) {
-        if(task.important === true) {
+        if (task.important === true) {
           todoResults.innerHTML += `<li class="important" id="${task.task.toString()}">${task.task.toString()}</li>`;
         } else {
           todoResults.innerHTML += `<li class="unimportant" id="${task.task.toString()}">${task.task.toString()}</li>`;
@@ -168,10 +176,12 @@ const fetchTask = () => {
   }
 };
 
+// Function to delete a task from local storage
 const deleteTask = (task) => {
-  if(localStorage.getItem('tasks') != null) {
+  if (localStorage.getItem('tasks') != null) {
     let tasks = Array.from(JSON.parse(`{"tasks":[${localStorage.getItem('tasks')}]}`).tasks);
 
+    // Use a filter to remove any tasks that match the one inputted to the function
     let returnedTasks = tasks.filter(storedTask => {
       return storedTask.task !== task;
     });
@@ -182,10 +192,11 @@ const deleteTask = (task) => {
   }
 };
 
+// Add an event listener to each li that will check off a task on first click and delete it on second
 todoResults.addEventListener('click', e => {
   let task = e.target;
 
-  if(task.classList.contains('checked')){
+  if (task.classList.contains('checked')) {
     task.parentNode.removeChild(task);
     deleteTask(task.id)
   } else {
@@ -193,6 +204,7 @@ todoResults.addEventListener('click', e => {
   }
 });
 
+// Load in the to do list from local storage every time the page loads
 fetchTask();
 
 todoForm.addEventListener('submit', saveTask);
