@@ -177,7 +177,7 @@ p {
   display: none;
 }
 
-#experienceContent {
+#todoContent {
   display: none;
 }
 
@@ -255,13 +255,19 @@ td:nth-child(3) {
   display: inline-block;
 }
 
+/* TO DO LIST STYLES */
+
+.important {
+  color: red;
+}
+
+.checked {
+  color: green;
+}
+
 /* TABLET STYLES */
 
 @media screen and (min-width: 600px) {
-
-  /* applies to screens wider than 499px */
-  body {
-  }
 
   /* force the scroll bar to always show */
   html {

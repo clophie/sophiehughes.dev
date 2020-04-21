@@ -2,7 +2,7 @@
 
 const aboutButton = document.querySelector("#aboutButton");
 const projectsButton = document.querySelector("#projectsButton");
-const experienceButton = document.querySelector("#experienceButton");
+const todoButton = document.querySelector("#todoButton");
 const photoButton = document.querySelector("#photoButton");
 const name = document.querySelector("#name");
 const portrait = document.querySelector("#mePicture");
@@ -10,10 +10,12 @@ const aboutContent = document.querySelector("#aboutContent");
 const projectsContent = document.querySelector("#projectsContent");
 const banlistBotCell = document.querySelector("#banlistBot");
 const previousSiteCell = document.querySelector("#previousSite");
-const experienceContent = document.querySelector("#experienceContent");
+const todoContent = document.querySelector("#todoContent");
 const photoContent = document.querySelector("#photoContent");
-let animeTable = document.querySelector("#animeTable");
 const images = document.getElementsByClassName("galleryImage");
+const todoForm = document.querySelector("#todoForm");
+const todoResults = document.querySelector("#todoResults");
+const animeTable = document.querySelector("#animeTable");
 
 let clickEvent = (() => {
   if ('ontouchstart' in document.documentElement)
@@ -33,8 +35,8 @@ projectsButton.addEventListener(clickEvent, () => {
 });
 
 // make the experience button show/hide the appropriate content
-experienceButton.addEventListener(clickEvent, () => {
-  navigationClicked(experienceContent)
+todoButton.addEventListener(clickEvent, () => {
+  navigationClicked(todoContent)
 });
 
 // make the photography button show/hide the appropriate content
@@ -123,3 +125,74 @@ banlistBotCell.addEventListener("mouseleave", () => imageMouseLeave(), false);
 
 previousSiteCell.addEventListener("mouseenter", () => imageMouseEnter("media/previoussite.jpg"), false);
 previousSiteCell.addEventListener("mouseleave", () => imageMouseLeave(), false);
+
+// Function to save a to do list task
+const saveTask = (event) => {
+  event.preventDefault();
+
+  let taskValue = document.querySelector("#todoInput").value;
+  let importantValue = document.querySelector("#todoImportant").checked;
+
+  let task = {
+    task:taskValue,
+    important:importantValue
+  };
+
+  if(localStorage.getItem('tasks') == null) {
+    localStorage.setItem('tasks', JSON.stringify(task));
+  } else {
+    let tasks = localStorage.getItem('tasks');
+
+    let taskString = `${tasks},${JSON.stringify(task)}`;
+
+    localStorage.setItem('tasks', taskString);
+  }
+  fetchTask();
+};
+
+// Function to get the tasks from local storage
+const fetchTask = () => {
+  todoResults.innerHTML = '';
+  if(localStorage.getItem('tasks') != null) {
+    let tasks = Array.from(JSON.parse(`{"tasks":[${localStorage.getItem('tasks')}]}`).tasks);
+
+    tasks.forEach(task => {
+      if (task.task != null) {
+        if(task.important === true) {
+          todoResults.innerHTML += `<li class="important" id="${task.task.toString()}">${task.task.toString()}</li>`;
+        } else {
+          todoResults.innerHTML += `<li class="unimportant" id="${task.task.toString()}">${task.task.toString()}</li>`;
+        }
+      }
+    });
+  }
+};
+
+const deleteTask = (task) => {
+  if(localStorage.getItem('tasks') != null) {
+    let tasks = Array.from(JSON.parse(`{"tasks":[${localStorage.getItem('tasks')}]}`).tasks);
+
+    let returnedTasks = tasks.filter(storedTask => {
+      return storedTask.task !== task;
+    });
+
+    localStorage.setItem('tasks', JSON.stringify(returnedTasks).replace("[", "").replace("]", ""));
+
+    fetchTask();
+  }
+};
+
+todoResults.addEventListener('click', e => {
+  let task = e.target;
+
+  if(task.classList.contains('checked')){
+    task.parentNode.removeChild(task);
+    deleteTask(task.id)
+  } else {
+    task.classList.add('checked');
+  }
+});
+
+fetchTask();
+
+todoForm.addEventListener('submit', saveTask);
