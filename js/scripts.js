@@ -27,25 +27,21 @@ let clickEvent = (() => {
 // make the about button show/hide the appropriate content
 aboutButton.addEventListener(clickEvent, () => {
   navigationClicked(aboutContent);
-  portrait.src = "media/me.jpg";
 });
 
 // make the projects button show/hide the appropriate content
 projectsButton.addEventListener(clickEvent, () => {
   navigationClicked(projectsContent);
-  portrait.src = "media/me.jpg";
 });
 
 // make the experience button show/hide the appropriate content
 todoButton.addEventListener(clickEvent, () => {
   navigationClicked(todoContent);
-  portrait.src = 'media/plainCircle.png';
 });
 
 // make the photography button show/hide the appropriate content
 photoButton.addEventListener(clickEvent, () => {
   navigationClicked(photoContent);
-  portrait.src = "media/me.jpg";
 });
 
 // request the Jikan API in order to get a list of currently watching anime
