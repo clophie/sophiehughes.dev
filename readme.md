@@ -44,7 +44,7 @@ features;
 
 [Local Storage To Do](https://codepen.io/ragzor/pen/xGrJrg?editors=0110)
 
-And of course, many stack overflow questions which are now buried in my browser history (and probably
+And of course, many Stack Overflow questions which are now buried in my browser history (and probably
 too numerous to list).
 
 
