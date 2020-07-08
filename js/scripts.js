@@ -2,7 +2,6 @@
 
 const aboutButton = document.querySelector("#aboutButton");
 const projectsButton = document.querySelector("#projectsButton");
-const todoButton = document.querySelector("#todoButton");
 const photoButton = document.querySelector("#photoButton");
 const name = document.querySelector("#name");
 const portrait = document.querySelector("#mePicture");
@@ -16,6 +15,7 @@ const images = document.getElementsByClassName("galleryImage");
 const todoForm = document.querySelector("#todoForm");
 const todoResults = document.querySelector("#todoResults");
 const animeTable = document.querySelector("#animeTable");
+const toDoList = document.querySelector("#toDoList");
 
 let clickEvent = (() => {
   if ('ontouchstart' in document.documentElement)
@@ -32,11 +32,10 @@ aboutButton.addEventListener(clickEvent, () => {
 // make the projects button show/hide the appropriate content
 projectsButton.addEventListener(clickEvent, () => {
   navigationClicked(projectsContent);
-});
 
-// make the experience button show/hide the appropriate content
-todoButton.addEventListener(clickEvent, () => {
-  navigationClicked(todoContent);
+  toDoList.addEventListener(clickEvent, () => {
+    navigationClicked(todoContent);
+  });
 });
 
 // make the photography button show/hide the appropriate content
