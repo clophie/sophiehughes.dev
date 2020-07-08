@@ -11,7 +11,7 @@ body {
   font-family: space_monoregular, "Roboto Mono", monospace;
   background-image: url("../media/background.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100vw 100vh;
   background-color: white;
 }
 
