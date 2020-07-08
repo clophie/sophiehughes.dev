@@ -1,4 +1,4 @@
-# CTEC3905 Assignment
+# Personal Portfolio Website
 
 The website created for this coursework has four pages. The first is an 'About' page of which the 
 notable feature is a table that is populated with data from the [Jikan unofficial MyAnimeList API](https://jikan.moe/). 
@@ -14,5 +14,7 @@ There are also links to GitHub and LinkedIn in the upper right of the page which
 pages.
 
 The site is responsive and the navigation bar changes to a hamburger menu on mobile.
+
+The live site can be found at https://sophiehughes.dev/
 
 

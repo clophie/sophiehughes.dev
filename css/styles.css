@@ -205,7 +205,7 @@ td {
 }
 
 td:nth-child(1) {
-  column-width: 8vw;
+  column-width: auto;
 }
 
 td:nth-child(3) {

@@ -16,6 +16,7 @@ const todoForm = document.querySelector("#todoForm");
 const todoResults = document.querySelector("#todoResults");
 const animeTable = document.querySelector("#animeTable");
 const toDoList = document.querySelector("#toDoList");
+const menuToggle = document.querySelector("#menuToggle input");
 
 let clickEvent = (() => {
   if ('ontouchstart' in document.documentElement)
@@ -27,11 +28,13 @@ let clickEvent = (() => {
 // make the about button show/hide the appropriate content
 aboutButton.addEventListener(clickEvent, () => {
   navigationClicked(aboutContent);
+  menuToggle.click();
 });
 
 // make the projects button show/hide the appropriate content
 projectsButton.addEventListener(clickEvent, () => {
   navigationClicked(projectsContent);
+  menuToggle.click();
 
   toDoList.addEventListener(clickEvent, () => {
     navigationClicked(todoContent);
@@ -41,6 +44,7 @@ projectsButton.addEventListener(clickEvent, () => {
 // make the photography button show/hide the appropriate content
 photoButton.addEventListener(clickEvent, () => {
   navigationClicked(photoContent);
+  menuToggle.click();
 });
 
 // request the Jikan API in order to get a list of currently watching anime
@@ -83,7 +87,6 @@ const populateTable = (data) => {
     addCell(row, item.watched_episodes + '/' + item.total_episodes, 0);
   });
 };
-
 
 // Function to handle showing and hiding of elements based on what nav button was clicked
 const navigationClicked = (contentToShow) => {
